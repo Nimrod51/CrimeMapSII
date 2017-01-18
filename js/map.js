@@ -16,7 +16,7 @@ var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
 var map = L.map('mapid', {
 	center: [51.513531, -0.089148], /*Default location */
 	zoom: 15, /*Default Zoom */
-	layers: [light] // Default basemaplayer on startrup, can also give another layer here to show by default)
+	layers: [dark] // Default basemaplayer on startrup, can also give another layer here to show by default)
 });
 
 var baseLayers = {
