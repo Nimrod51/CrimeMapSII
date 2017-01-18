@@ -1,4 +1,4 @@
-var heat;
+var heat; //Make heat map variable global
 
 var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -34,8 +34,8 @@ var wmsLayer = L.tileLayer.wms('http://www.mapping2.cityoflondon.gov.uk/arcgis/s
 createHeatLayer();
 
 var overlays = {
-	"Underground Stations": wmsLayer,
-	"Heat Map": heat
+	"Heat Map": heat,
+	"Underground Stations": wmsLayer
 };
 
 L.control.layers(baseLayers, overlays).addTo(map);

@@ -8,11 +8,10 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src = "js/leaflet.js"> </script>
+	<script src = "js/leaflet.js"> </script> <!--Leaflet JS must be called BEFORE heat JS -->
 	<script src = "js/leaflet-heat.js"> </script> 
 	<script src = "js/Leaflet-WFST.src.js"> </script> 
 	<script src = "js/Leaflet-WFST.min.js"> </script>
-	
 	<style>
 		#mapid {
 			width: 900px;
@@ -21,6 +20,10 @@
 	</style>
 </head>
 <body>
+<h1 style="font-family: sans-serif; font-size: 36px;"><b>Crime Heat Map</b></h1>
+<p style="font-family: sans-serif;"><b>Created by:</b> Alicja Balfanz, Nimrod Gavish, Diego Morales, Jeison Londoño, Cristhian Murcia </p>
+<p style="font-family: sans-serif";>This map allows to see a crime heat map in the City of London based on data from the <a href= "https://data.police.uk/docs/">UK's police data website</a>.  The map aggregates locations of Street Level crimes from the latest month, and only includes crimes that have an associated location (latitude, longitude). Additionally, the map displays a WFS layer that includes the underground stations  and a London borough layer, retrieved from <a href="https://data.gov.uk/dataset"> UK's government data portal</a> Please use the layer control to change basemaps and overlay the heat and underground stations layers. </p>
+
 <div id="mapid"></div> <!-- Must have 'height' in style argument -->
 
 <script src = "js/map.js"> </script> <!--Main Script -->
