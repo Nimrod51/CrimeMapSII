@@ -40,7 +40,9 @@ var overlays = {
 
 L.control.layers(baseLayers, overlays).addTo(map);
 
-
+/**
+Load Json Sychronously from London Police API
+*/
 function LoadGeoJSON(data) {
 	var json = null;
 	$.ajax({
@@ -55,6 +57,9 @@ function LoadGeoJSON(data) {
 	});
 	return json;
 }
+/**
+Create Heat Map Layer from crime points 
+*/
 
 function createHeatLayer () {
 var json = LoadGeoJSON("https://data.police.uk/api/crimes-street/all-crime?poly=51.528980,-0.094350:51.511643, -0.115524:51.509700, -0.075766");
