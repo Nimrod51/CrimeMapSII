@@ -29,13 +29,27 @@ var baseLayers = {
 	"Light Map": light
 };
 
-var wmsLayer = L.tileLayer.wms('http://www.mapping2.cityoflondon.gov.uk/arcgis/services/INSPIRE/MapServer/WMSServer?',{layers: '39'}).addTo(map);
+var ukWMSOptions = {
+	layers: '39',
+	format: 'image/png',
+	transparent: 'true'
+}
+
+var wmsLayer = L.tileLayer.wms('http://www.mapping2.cityoflondon.gov.uk/arcgis/services/INSPIRE/MapServer/WMSServer?', ukWMSOptions).addTo(map);
+
+var geoserverWMSOptions = {
+    layers: 'Borough:Polygon',
+	format: 'image/png',
+	transparent: 'true'
+}
+var boroughWMSLayer = L.tileLayer.wms('http://10.67.18.87:8080/geoserver/Borough/wms?', geoserverWMSOptions).addTo(map);
 
 createHeatLayer();
 
 var overlays = {
 	"Heat Map": heat,
-	"Underground Stations": wmsLayer
+	"Borough Boundaries": boroughWMSLayer,
+	"Underground Stations": wmsLayer	
 };
 
 L.control.layers(baseLayers, overlays).addTo(map);
