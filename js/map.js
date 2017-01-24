@@ -14,11 +14,11 @@ var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
 	satellitestreets = L.tileLayer(mbUrl, {id: 'mapbox.streets-satellite', attribution: mbAttr});
 
 var map = L.map('mapid', {
-	center: [51.513531, -0.089148], /*Default location */
+	center: [51.519531, -0.099148], /*Default location */
 	zoom: 15, /*Default Zoom */
 	layers: [dark] // Default basemaplayer on startrup, can also give another layer here to show by default)
 });
-
+L.control.sidebar('sidebar').addTo(map);
 var baseLayers = {
 	"Grayscale": grayscale,
 	"Streets": streets,

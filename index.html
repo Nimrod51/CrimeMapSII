@@ -14,15 +14,67 @@
 	<script src = "js/Leaflet-WFST.min.js"> </script>
 	<style>
 		#mapid {
-			width: 900px;
-			height: 600px;
+			width: 100%;
+			height: 100%;
 		}
+        body {
+            margin: 0;
+            padding: 0;
+        }
 	</style>
+      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  <link rel="stylesheet" href="css/leaflet-sidebar.min.css"/> 
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"/>
+
+ 
+  <script src="js/leaflet-sidebar.min.js"></script>
+    
+
+    
+    
+    
 </head>
 <body>
-<h1 style="font-family: sans-serif; font-size: 36px;"><b>Crime Heat Map</b></h1>
-<p style="font-family: sans-serif;"><b>Created by:</b> Alicja Balfanz, Nimrod Gavish, Diego Morales, Jeison Londoño, Cristhian Murcia </p>
-<p style="font-family: sans-serif";>This map allows to see a crime heat map in the City of London based on data from the <a href= "https://data.police.uk/docs/">UK's police data website</a>.  The map aggregates locations of Street Level crimes from the latest month, and only includes crimes that have an associated location (latitude, longitude). Additionally, the map displays a WFS layer that includes the underground stations  and a London borough layer, retrieved from <a href="https://data.gov.uk/dataset"> UK's government data portal</a> Please use the layer control to change basemaps and overlay the heat and underground stations layers. </p>
+    
+    
+ <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+                
+                <li><a href="#contact" role="tab"><i class="fa fa-envelope"></i></a></li>
+				
+            </ul>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">Crime Heat Map<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                
+                
+                <p style="font-family: sans-serif;"><b>Created by:</b> Alicja Balfanz, Nimrod Gavish, Diego Morales, Jeison Londoño, Cristhian Murcia </p>
+                
+                <p style="font-family: sans-serif";>This map allows to see a crime heat map in the City of London based on data from the <a href= "https://data.police.uk/docs/">UK's police data website</a>.</p>
+                
+                <p>The map aggregates locations of Street Level crimes from the latest month, and only includes crimes that have an associated location (latitude, longitude). We are using our own WMS (GeoServer) to provide the London boroughs borders. Additionally, the map displays a WMS layer that includes the underground stations  and a London borough layer, retrieved from <a href="https://data.gov.uk/dataset"> UK's government data portal.</a></p>
+                
+                <p><italic>Please use the layer control to change basemaps and overlay the heat and underground stations layers.</italic></p> 
+
+            </div>
+
+            
+
+            <div class="sidebar-pane" id="contact">
+                <h1 class="sidebar-header">Contact<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                <p style="font-family: sans-serif;"><b>Created by:</b> Alicja Balfanz, Nimrod Gavish, Diego Morales, Jeison Londoño, Cristhian Murcia </p>
+            </div>
+
+            <
+        </div>
+    </div>
 
 <div id="mapid"></div> <!-- Must have 'height' in style argument -->
 
