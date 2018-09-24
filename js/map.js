@@ -32,7 +32,7 @@ var baseLayers = {
 };
 
 var ukWMSOptions = {
-	layers: '39',
+	layers: '74',
 	format: 'image/png',
 	transparent: 'true'
 }
