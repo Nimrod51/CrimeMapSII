@@ -39,18 +39,16 @@ var ukWMSOptions = {
 
 var wmsLayer = L.tileLayer.wms('http://www.mapping2.cityoflondon.gov.uk/arcgis/services/INSPIRE/MapServer/WMSServer?', ukWMSOptions).addTo(map);
 
-var geoserverWMSOptions = {
-    layers: 'Borough:Polygon',
-	format: 'image/png',
-	transparent: 'true'
-}
-var boroughWMSLayer = L.tileLayer.wms('http://10.67.18.87:8080/geoserver/Borough/wms?', geoserverWMSOptions).addTo(map);
+
+var boroughLayer = L.geoJSON(boroughs).addTo(map);
+
+
 
 createHeatLayer();
 
 var overlays = {
 	"Heat Map": heat,
-	"Borough Boundaries": boroughWMSLayer,
+	"London Boroughs": boroughLayer,
 	"Underground Stations": wmsLayer	
 };
 
